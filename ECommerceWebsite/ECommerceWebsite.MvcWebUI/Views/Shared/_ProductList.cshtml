@@ -1,0 +1,22 @@
+﻿@using ECommerceWebsite.MvcWebUI.Entity;
+@model IEnumerable<Product>
+
+<div class="row">
+    @foreach (var product in Model)
+    {
+        <div class="col-md-4">
+            <div class="card">
+                <img class="card-img-top" src="..." alt="@product.ProductName">
+                <div class="card-body">
+                    <h5 class="card-title">
+                        <a href="/Home/Details/@product.Id">@product.ProductName</a>
+                    </h5>
+                    <p class="card-text">@product.ProductDescription</p>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted">@product.ProductPrice</small>
+                </div>
+            </div>
+        </div>
+    }
+</div>
