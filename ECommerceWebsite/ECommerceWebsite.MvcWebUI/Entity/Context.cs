@@ -8,6 +8,10 @@ namespace ECommerceWebsite.MvcWebUI.Entity
 {
     public class Context : DbContext
     {
+        public Context() : base("dataConnection")
+        {
+        }
+
         public DbSet<Product> Products { get; set; }
         public DbSet<Category> Categories{ get; set; }
 
