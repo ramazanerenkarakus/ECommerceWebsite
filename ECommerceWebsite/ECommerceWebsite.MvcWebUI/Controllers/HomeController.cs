@@ -43,7 +43,7 @@ namespace ECommerceWebsite.MvcWebUI.Controllers
                 ProductDescription = i.ProductDescription.Length > 50 ? i.ProductDescription.Substring(0, 47) + "..." : i.ProductDescription,
                 ProductPrice = i.ProductPrice,
                 ProductStock = i.ProductStock,
-                Image = i.Image,
+                Image = i.Image ?? "background1.jpg",
                 CategoryId = i.CategoryId
             }).ToList();
 
