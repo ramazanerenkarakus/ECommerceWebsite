@@ -10,6 +10,12 @@
     margin-left: -25px;
 }
 
+#product-price
+{
+    font-size: 30px;
+    color: red;
+}
+
 /* --------------------------------------------Sticky footer styles-------------------------------------------------- */
 html {
     position: relative;
