@@ -1,4 +1,5 @@
 ﻿using ECommerceWebsite.MvcWebUI.Entity;
+using ECommerceWebsite.MvcWebUI.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,7 +15,18 @@ namespace ECommerceWebsite.MvcWebUI.Controllers
         // GET: Home
         public ActionResult Index()
         {
-            return View(_context.Products.Where(i => i.IsHome && i.IsApproved).ToList());
+            var products = _context.Products.Where(i => i.IsHome && i.IsApproved).Select(i => new ProductModel()
+            {
+                Id = i.Id,
+                ProductName= i.ProductName,
+                ProductDescription= i.ProductDescription.Length > 50 ? i.ProductDescription.Substring(0, 47) + "..." : i.ProductDescription,
+                ProductPrice= i.ProductPrice,
+                ProductStock= i.ProductStock,
+            }).ToList();
+
+
+
+            return View();
         }
 
         public ActionResult Details(int id)
