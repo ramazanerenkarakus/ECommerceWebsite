@@ -5,6 +5,11 @@
     height: 100%;
 }
 
+#write-review
+{
+    margin-left: -25px;
+}
+
 /* --------------------------------------------Sticky footer styles-------------------------------------------------- */
 html {
     position: relative;
