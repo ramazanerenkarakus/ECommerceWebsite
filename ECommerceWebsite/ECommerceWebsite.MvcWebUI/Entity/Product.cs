@@ -14,5 +14,7 @@ namespace ECommerceWebsite.MvcWebUI.Entity
         public int ProductStock { get; set; }
         public bool IsApproved { get; set; }
 
+        public int CategoryId { get; set; }
+        public Category Category { get; set; } 
     }
 }
