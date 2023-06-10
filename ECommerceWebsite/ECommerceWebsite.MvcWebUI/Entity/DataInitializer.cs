@@ -11,7 +11,7 @@ namespace ECommerceWebsite.MvcWebUI.Entity
         protected override void Seed(Context context)
         {
 
-            var kategoriler = new List<Category>()
+            var categories = new List<Category>()
             {
 
                 new Category(){CategoryName="Kamera",CategoryDescription="Kamera Ürünleri"},
@@ -21,29 +21,27 @@ namespace ECommerceWebsite.MvcWebUI.Entity
                 new Category(){CategoryName="Beyaz Eşya",CategoryDescription="Beyaz Eşya Ürünleri"}
             };
 
-            foreach (var kategori in kategoriler)
+            foreach (var category in categories)
             {
-                context.Categories.Add(kategori);
+                context.Categories.Add(category);
             }
             context.SaveChanges();
 
-            var urunler = new List<Product>()
+            var products = new List<Product>()
             {
-                new Product(){ProductName="Samsung Kamera",ProductDescription="aaaaaaaa",ProductPrice=4500, ProductStock=100,IsApproved=true,CategoryId=1},
+                new Product(){ProductName="Samsung Kamera",ProductDescription="aaaaaaaa",ProductPrice=4500, ProductStock=100,IsApproved=true,CategoryId=1,IsHome=true},
                 new Product(){ProductName="Lenovo Kamera",ProductDescription="aaaaaaaa",ProductPrice=4500, ProductStock=100,IsApproved=true,CategoryId=1},
                 new Product(){ProductName="Samsung Bilgisayar",ProductDescription="bbbbbbbb",ProductPrice=2000, ProductStock=200,IsApproved=false,CategoryId=2},
-                new Product(){ProductName="Lenovo Bilgisayar",ProductDescription="bbbbbbbb",ProductPrice=5000, ProductStock=200,IsApproved=true,CategoryId=2},
+                new Product(){ProductName="Lenovo Bilgisayar",ProductDescription="bbbbbbbb",ProductPrice=5000, ProductStock=200,IsApproved=true,CategoryId=2,IsHome=true},
                 new Product(){ProductName="Samsung Elektronik",ProductDescription="asdasdas",ProductPrice=3000, ProductStock=300,IsApproved=true,CategoryId=3},
-                new Product(){ProductName="Lenovo Elektronik",ProductDescription="asdasdas",ProductPrice=7000, ProductStock=300,IsApproved=false,CategoryId=3},
-                new Product(){ProductName="Samsung Telefon",ProductDescription="ccccccccc",ProductPrice=4000, ProductStock=400,IsApproved=true,CategoryId=4},
+                new Product(){ProductName="Lenovo Elektronik",ProductDescription="asdasdas",ProductPrice=7000, ProductStock=300,IsApproved=false,CategoryId=3,IsHome=true},
+                new Product(){ProductName="Samsung Telefon",ProductDescription="ccccccccc",ProductPrice=4000, ProductStock=400,IsApproved=true,CategoryId=4,IsHome=true},
                 new Product(){ProductName="Lenovo Telefon",ProductDescription="ccccccccc",ProductPrice=8000, ProductStock=400,IsApproved=true,CategoryId=4},
-                new Product(){ProductName="Samsung Beyaz Eşya",ProductDescription="dddddddd",ProductPrice=5000, ProductStock=500,IsApproved=false,CategoryId=5},
-                new Product(){ProductName="Lenovo Beyaz Eşya",ProductDescription="dddddddd",ProductPrice=6000, ProductStock=500,IsApproved=true,CategoryId=5}
             };
 
-            foreach(var urun in urunler)
+            foreach(var product in products)
             {
-                context.Products.Add(urun);
+                context.Products.Add(product);
             }
             context.SaveChanges();
 

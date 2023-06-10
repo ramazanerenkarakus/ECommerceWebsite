@@ -70,3 +70,7 @@ C:\Users\ErenKarakus\Desktop\Project\ETicaretPrjct\ECommerceWebsite\ECommerceWeb
 C:\Users\ErenKarakus\Desktop\Project\ETicaretPrjct\ECommerceWebsite\ECommerceWebsite.MvcWebUI\obj\Debug\ECommerceWebsite.MvcWebUI.csproj.CopyComplete
 C:\Users\ErenKarakus\Desktop\Project\ETicaretPrjct\ECommerceWebsite\ECommerceWebsite.MvcWebUI\obj\Debug\ECommerceWebsite.MvcWebUI.dll
 C:\Users\ErenKarakus\Desktop\Project\ETicaretPrjct\ECommerceWebsite\ECommerceWebsite.MvcWebUI\obj\Debug\ECommerceWebsite.MvcWebUI.pdb
+C:\Users\ErenKarakus\Desktop\Project\ETicaretPrjct\ECommerceWebsite\ECommerceWebsite.MvcWebUI\bin\EntityFramework.dll
+C:\Users\ErenKarakus\Desktop\Project\ETicaretPrjct\ECommerceWebsite\ECommerceWebsite.MvcWebUI\bin\EntityFramework.SqlServer.dll
+C:\Users\ErenKarakus\Desktop\Project\ETicaretPrjct\ECommerceWebsite\ECommerceWebsite.MvcWebUI\bin\EntityFramework.xml
+C:\Users\ErenKarakus\Desktop\Project\ETicaretPrjct\ECommerceWebsite\ECommerceWebsite.MvcWebUI\bin\EntityFramework.SqlServer.xml

@@ -12,6 +12,7 @@ namespace ECommerceWebsite.MvcWebUI.Entity
         public string ProductDescription { get; set; }
         public double ProductPrice { get; set; }
         public int ProductStock { get; set; }
+        public bool IsHome { get; set; }
         public bool IsApproved { get; set; }
 
         public int CategoryId { get; set; }

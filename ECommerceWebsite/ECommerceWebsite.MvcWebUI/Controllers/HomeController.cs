@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ECommerceWebsite.MvcWebUI.Entity;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,10 +9,12 @@ namespace ECommerceWebsite.MvcWebUI.Controllers
 {
     public class HomeController : Controller
     {
+        Context _context = new Context();
+         
         // GET: Home
         public ActionResult Index()
         {
-            return View();
+            return View(_context.Products.ToList());
         }
 
         public ActionResult Details()
