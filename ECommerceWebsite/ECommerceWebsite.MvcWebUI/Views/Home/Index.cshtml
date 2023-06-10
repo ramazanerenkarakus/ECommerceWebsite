@@ -21,7 +21,9 @@
             <div class="card">
                 <img class="card-img-top" src="..." alt="@product.ProductName">
                 <div class="card-body">
-                    <h5 class="card-title">@product.ProductName</h5>
+                    <h5 class="card-title">
+                        <a href="/Home/Details/@product.Id">@product.ProductName</a>       
+                    </h5>
                     <p class="card-text">@product.ProductDescription</p>
                 </div>
                 <div class="card-footer">

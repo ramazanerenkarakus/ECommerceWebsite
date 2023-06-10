@@ -10,21 +10,21 @@ namespace ECommerceWebsite.MvcWebUI.Controllers
     public class HomeController : Controller
     {
         Context _context = new Context();
-         
+
         // GET: Home
         public ActionResult Index()
         {
-            return View(_context.Products.ToList());
+            return View(_context.Products.Where(i => i.IsHome && i.IsApproved).ToList());
         }
 
-        public ActionResult Details()
+        public ActionResult Details(int id)
         {
-            return View();
+            return View(_context.Products.Where(i => i.Id == id).ToList());
         }
 
         public ActionResult List()
         {
-            return View();
+            return View(_context.Products.Where(i => i.IsApproved).ToList());
         }
     }
 }
