@@ -18,15 +18,15 @@ namespace ECommerceWebsite.MvcWebUI.Controllers
             var products = _context.Products.Where(i => i.IsHome && i.IsApproved).Select(i => new ProductModel()
             {
                 Id = i.Id,
-                ProductName= i.ProductName,
-                ProductDescription= i.ProductDescription.Length > 50 ? i.ProductDescription.Substring(0, 47) + "..." : i.ProductDescription,
-                ProductPrice= i.ProductPrice,
-                ProductStock= i.ProductStock,
+                ProductName = i.ProductName,
+                ProductDescription = i.ProductDescription.Length > 50 ? i.ProductDescription.Substring(0, 47) + "..." : i.ProductDescription,
+                ProductPrice = i.ProductPrice,
+                ProductStock = i.ProductStock,
+                Image = i.Image,
+                CategoryId = i.CategoryId
             }).ToList();
 
-
-
-            return View();
+            return View(products);
         }
 
         public ActionResult Details(int id)
@@ -36,7 +36,18 @@ namespace ECommerceWebsite.MvcWebUI.Controllers
 
         public ActionResult List()
         {
-            return View(_context.Products.Where(i => i.IsApproved).ToList());
+            var products = _context.Products.Where(i => i.IsApproved).Select(i => new ProductModel()
+            {
+                Id = i.Id,
+                ProductName = i.ProductName,
+                ProductDescription = i.ProductDescription.Length > 50 ? i.ProductDescription.Substring(0, 47) + "..." : i.ProductDescription,
+                ProductPrice = i.ProductPrice,
+                ProductStock = i.ProductStock,
+                Image = i.Image,
+                CategoryId = i.CategoryId
+            }).ToList();
+
+            return View(products);
         }
     }
 }
