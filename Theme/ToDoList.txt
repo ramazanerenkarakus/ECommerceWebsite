@@ -1,0 +1,1 @@
+Theme preparation process with Bootstrap
