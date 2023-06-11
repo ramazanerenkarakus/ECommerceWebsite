@@ -13,8 +13,11 @@ namespace ECommerceWebsite.MvcWebUI.Entity
         public string ProductName { get; set; }
         [DisplayName("Ürün Açıklaması")]
         public string ProductDescription { get; set; }
+        [DisplayName("Ürün Fiyatı")]
         public double ProductPrice { get; set; }
+        [DisplayName("Ürün Stoğu")]
         public int ProductStock { get; set; }
+        [DisplayName("Ürün Resmi")]
         public string Image{ get; set; }
         [DisplayName("Ana Sayfada mı?")]
         public bool IsHome { get; set; }
