@@ -20,6 +20,13 @@
                     Bu kategoride ürün bulunamadı.
                 </div>
             }
+            else
+            {
+                <div class="alert alert-warning" role="alert">
+                    <i class="fa-solid fa-circle-check"></i>
+                    @Model.Count() adet ürün bulundu.
+                </div>
+            }
 
             @Html.Partial("_ProductList", Model)
         </div>
