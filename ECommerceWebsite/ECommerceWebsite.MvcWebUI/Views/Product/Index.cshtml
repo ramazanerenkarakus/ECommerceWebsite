@@ -2,10 +2,11 @@
 
 @{
     ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
 <div class="container pb-5">
-    <h2>Yeni Ürün</h2>
+    <h2>Ürün Listesi</h2>
     <hr />
 
     <p>
@@ -30,6 +31,7 @@
                 @Html.DisplayNameFor(model => model.IsApproved)
             </th>
             <th style="width:140px;"></th>
+            <!--Eğer image sığmazsa bir üst satırdaki kod bloğunu image'ye yerleştir ve düzenle.-->
         </tr>
 
         @foreach (var item in Model)
