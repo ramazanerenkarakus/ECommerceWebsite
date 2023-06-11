@@ -14,15 +14,21 @@
     height: 34px;
 }
 
+.card-text {
+    font-size: 12px;
+}
+
+.text-muted{
+    color: #414141;
+    font-weight: 700;
+    font-size: 17px;
+}
+
+
 #write-review {
     margin-left: -25px;
 }
 
-#product-price
-{
-    font-size: 30px;
-    color: red;
-}
 
 /* --------------------------------------------Sticky footer styles-------------------------------------------------- */
 html {

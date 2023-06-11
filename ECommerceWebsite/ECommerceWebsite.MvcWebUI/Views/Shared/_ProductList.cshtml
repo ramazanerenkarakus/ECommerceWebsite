@@ -8,13 +8,16 @@
             <div class="card">
                 <img class="card-img-top" src="~/Theme/img/@product.Image" alt="@product.ProductName">
                 <div class="card-body">
-                    <h5 class="card-title">
+                    <h4 class="card-title">
                         <a href="/Home/Details/@product.Id">@product.ProductName</a>
-                    </h5>
-                    <p class="card-text">@product.ProductDescription</p>
+                    </h4>
+                    <p class="card-text pt-2">@product.ProductDescription</p>
                 </div>
                 <div class="card-footer">
-                    <small class="text-muted">@product.ProductPrice</small>
+                    <small class="text-muted">
+                    <i class="fa-solid fa-turkish-lira-sign fa-fw"></i>
+                    @product.ProductPrice
+                    </small>
                 </div>
             </div>
         </div>
