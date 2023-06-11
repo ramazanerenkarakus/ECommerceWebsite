@@ -4,9 +4,10 @@
     
     @foreach (var item in Model)
     {
-        <li class="list-group-item active">
+        <li class="list-group-item">
 
             <a href="/Home/List/@item.Id">
+                <i class="fa-solid fa-angles-right fa-fw"></i>
                 @item.CategoryName
             </a>
         </li>
