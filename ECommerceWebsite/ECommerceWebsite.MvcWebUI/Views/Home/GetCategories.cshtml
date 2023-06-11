@@ -1,6 +1,11 @@
 ﻿@model IEnumerable<ECommerceWebsite.MvcWebUI.Entity.Category>
+@{
+    var selectedCategory = Url.RequestContext.RouteData.Values["id"];
+}
+<!--Yukarıdaki kod bloğu; seçili olan kategori'nin id'sini alabilmek için RouteConfig.cs içerisindeki RouteData üzerinden id'ye eriş.-->
 
 <ul class="list-group">
+
     <li class="list-group-item">
         <a href="/Home/List">
             <i class="fa-solid fa-angles-right fa-fw"></i>
@@ -10,13 +15,42 @@
 
     @foreach (var item in Model)
     {
-        <li class="list-group-item">
+        if (selectedCategory != null)
+        {
+            <!-- Önce object->string çevrilmeli ardından string->int -->
+            if (item.Id == int.Parse((selectedCategory.ToString())))
+            {
+                //seçilen kategori ile route id'si birbirine eşit ise
+                <li class="list-group-item active">
 
-            <a href="/Home/List/@item.Id">
-                <i class="fa-solid fa-angles-right fa-fw"></i>
-                @item.CategoryName
-            </a>
-        </li>
+                    <a href="/Home/List/@item.Id">
+                        <i class="fa-solid fa-angles-right fa-fw"></i>
+                        @item.CategoryName
+                    </a>
+                </li>
+            }
+            else
+            {
+                //kategori seçili olmadığı zaman
+                <li class="list-group-item active">
+
+                    <a href="/Home/List/@item.Id">
+                        <i class="fa-solid fa-angles-right fa-fw"></i>
+                        @item.CategoryName
+                    </a>
+                </li>
+            }
+        }
+        else
+        {
+            <li class="list-group-item">
+
+                <a href="/Home/List/@item.Id">
+                    <i class="fa-solid fa-angles-right fa-fw"></i>
+                    @item.CategoryName
+                </a>
+            </li>
+        }
     }
 
 </ul>
