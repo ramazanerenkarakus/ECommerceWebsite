@@ -15,7 +15,7 @@ namespace ECommerceWebsite.MvcWebUI.Identity
         }
         public ApplicationRole(string rolname,string description)
         {
-
+            this.Description = description;
         }
     }
 }
