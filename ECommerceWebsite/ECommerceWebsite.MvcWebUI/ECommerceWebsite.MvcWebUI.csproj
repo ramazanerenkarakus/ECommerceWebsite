@@ -140,6 +140,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\Startup1.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
@@ -153,6 +154,7 @@
     <Compile Include="Identity\ApplicationRole.cs" />
     <Compile Include="Identity\ApplicationUser.cs" />
     <Compile Include="Models\ProductModel.cs" />
+    <Compile Include="Models\Register.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

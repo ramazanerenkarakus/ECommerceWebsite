@@ -11,24 +11,28 @@ namespace ECommerceWebsite.MvcWebUI.Models
     {
         [Required]
         [DisplayName("Adınız")]
-        public string Name{ get; set; }
+        public string Name { get; set; }
 
         [Required]
         [DisplayName("Soyadınız")]
-        public string Surname{ get; set; }
+        public string Surname { get; set; }
+
+        [Required]
+        [DisplayName("Kullanıcı Adınız")]
+        public string UserName { get; set; }
 
         [Required]
         [DisplayName("Email Adresiniz")]
-        [EmailAddress]
-        public string Email{ get; set; }
+        [EmailAddress(ErrorMessage = "Email adresinizi düzeltiniz.")]
+        public string Email { get; set; }
 
         [Required]
         [DisplayName("Şifre")]
-        public string Password{ get; set; }
+        public string Password { get; set; }
 
         [Required]
         [DisplayName("Şifre Tekrar")]
-        [Compare("Password",ErrorMessage = "Şifreleriniz aynı değil. Tekrar deneyin.")]
-        public string RePassword{ get; set; }
+        [Compare("Password", ErrorMessage = "Şifreleriniz aynı değil. Tekrar deneyin.")]
+        public string RePassword { get; set; }
     }
 }
