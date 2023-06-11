@@ -29,7 +29,7 @@ namespace ECommerceWebsite.MvcWebUI.Entity
 
             var products = new List<Product>()
             {
-                new Product(){ProductName="Samsung Kamera",ProductDescription="aaaaaaaa",ProductPrice=4500, ProductStock=100,IsApproved=true,CategoryId=1,IsHome=true},
+                new Product(){ProductName="Samsung Kamera",ProductDescription="aaaaaaaa",ProductPrice=4500, ProductStock=100,IsApproved=true,CategoryId=1,IsHome=true,Image="cameraphoto.png"},
                 new Product(){ProductName="Lenovo Kamera",ProductDescription="aaaaaaaa",ProductPrice=4500, ProductStock=100,IsApproved=true,CategoryId=1},
                 new Product(){ProductName="Samsung Bilgisayar",ProductDescription="bbbbbbbb",ProductPrice=2000, ProductStock=200,IsApproved=false,CategoryId=2,Image="cameraphoto.png"},
                 new Product(){ProductName="Lenovo Bilgisayar",ProductDescription="bbbbbbbb",ProductPrice=5000, ProductStock=200,IsApproved=true,CategoryId=2,IsHome=true,Image="cameraphoto.png"},

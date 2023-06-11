@@ -4,20 +4,26 @@
 <div class="row">
     @foreach (var product in Model)
     {
-        <div class="col-md-4">
+        <div class="col-md-4 mb-3">
             <div class="card">
                 <img class="card-img-top" src="~/Theme/img/@product.Image" alt="@product.ProductName">
                 <div class="card-body">
                     <h4 class="card-title">
                         <a href="/Home/Details/@product.Id">@product.ProductName</a>
                     </h4>
-                    <p class="card-text pt-2">@product.ProductDescription</p>
+                    <p class="card-text pt-2 description">
+                        @product.ProductDescription
+                    </p>
                 </div>
                 <div class="card-footer">
-                    <small class="text-muted">
+                    <small class="text-muted product-price">
                     <i class="fa-solid fa-turkish-lira-sign fa-fw"></i>
                     @product.ProductPrice
                     </small>
+                    <a href="/Home/Details/@product.Id" class="btn btn-default btn-sm float-right">
+                        <i class="fa-sharp fa-solid fa-angles-right fa-fw"></i>
+                        Ürünü İncele
+                    </a>
                 </div>
             </div>
         </div>
