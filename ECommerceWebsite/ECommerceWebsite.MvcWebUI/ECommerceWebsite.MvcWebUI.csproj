@@ -102,6 +102,7 @@
     <Content Include="Theme\img\background2.jpg" />
     <Content Include="Theme\img\cameraphoto.png" />
     <Content Include="Theme\img\lenovoPc.jpg" />
+    <Content Include="Theme\img\noImage.jpg" />
     <Content Include="Theme\img\samsungPc.jpg" />
     <Content Include="Theme\img\samsunTelefon.jpg" />
     <Content Include="Theme\productDetails.html" />

@@ -1,7 +1,13 @@
 ﻿@model IEnumerable<ECommerceWebsite.MvcWebUI.Entity.Category>
 
 <ul class="list-group">
-    
+    <li class="list-group-item">
+        <a href="Home/List">
+            <i class="fa-solid fa-angles-right fa-fw"></i>
+            Tüm Kategoriler
+        </a>
+    </li>
+
     @foreach (var item in Model)
     {
         <li class="list-group-item">
