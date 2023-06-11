@@ -49,5 +49,12 @@ namespace ECommerceWebsite.MvcWebUI.Controllers
 
             return View(products);
         }
+
+
+        public PartialViewResult GetCategories()
+        {
+            return PartialView(_context.Categories.ToList());
+        }
+
     }
 }
