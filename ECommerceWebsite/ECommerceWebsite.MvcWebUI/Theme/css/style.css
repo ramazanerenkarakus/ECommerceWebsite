@@ -23,6 +23,11 @@
     font-size: 17px;
 }
 
+#product-details h1{
+    font-size: 20px;
+    font-weight: 700;
+}
+
 
 #write-review {
     margin-left: -25px;
