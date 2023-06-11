@@ -37,12 +37,26 @@ namespace ECommerceWebsite.MvcWebUI.Controllers
             {
                 //Kayıt işlemleri
                 var user = new ApplicationUser();
-                user.Name= model.Name;
-                user.Surname=model.Surname;
-                user.Email=model.Email;
-                user.UserName=model.UserName;
+                user.Name = model.Name;
+                user.Surname = model.Surname;
+                user.Email = model.Email;
+                user.UserName = model.UserName;
 
-                IdentityResult result = UserManager.Create(user,model.Password);
+                var result = UserManager.Create(user, model.Password);
+
+                if (result.Succeeded)
+                {
+                    //kullanıcı oluşturuldu, role atanmaya hazır.
+                    if (RoleManager.RoleExists("User"))
+                    {
+                        UserManager.AddToRole(user.Id, "User");
+                    }
+                    return RedirectToAction("Login", "Account");
+                }
+                else
+                {
+                    ModelState.AddModelError("RegisterUserError", "Kullanıcı oluşturulamadı.");
+                }
 
             }
 
