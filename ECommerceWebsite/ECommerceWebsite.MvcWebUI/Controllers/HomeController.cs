@@ -34,7 +34,7 @@ namespace ECommerceWebsite.MvcWebUI.Controllers
             return View(_context.Products.Where(i => i.Id == id).FirstOrDefault());
         }
 
-        public ActionResult List()
+        public ActionResult List(int? id)
         {
             var products = _context.Products.Where(i => i.IsApproved).Select(i => new ProductModel()
             {
@@ -43,11 +43,16 @@ namespace ECommerceWebsite.MvcWebUI.Controllers
                 ProductDescription = i.ProductDescription.Length > 50 ? i.ProductDescription.Substring(0, 47) + "..." : i.ProductDescription,
                 ProductPrice = i.ProductPrice,
                 ProductStock = i.ProductStock,
-                Image = i.Image ?? "samsunTelefon.jpg",
+                Image = i.Image ?? "noImage.jpg", //eğer resim boş ise default resim ekle.
                 CategoryId = i.CategoryId
-            }).ToList();
+            }).AsQueryable();
 
-            return View(products);
+            if(id!=null)
+            {
+                products = products.Where(i => i.CategoryId == id);
+            }
+
+            return View(products.ToList());
         }
 
 
