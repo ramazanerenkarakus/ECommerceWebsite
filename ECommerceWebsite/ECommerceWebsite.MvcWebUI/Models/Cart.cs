@@ -15,7 +15,6 @@ namespace ECommerceWebsite.MvcWebUI.Models
             get { return _cartLines; }
 
         }
-
         public void AddProduct(Product product, int quantity)
         {
             var line = _cartLines.FirstOrDefault(i => i.Product.Id == product.Id);
