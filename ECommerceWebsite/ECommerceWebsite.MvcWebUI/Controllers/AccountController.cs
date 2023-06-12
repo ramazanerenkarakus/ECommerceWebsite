@@ -75,7 +75,7 @@ namespace ECommerceWebsite.MvcWebUI.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Login(Login model)
+        public ActionResult Login(Login model, string ReturnUrl)
         {
             if (ModelState.IsValid)
             {
@@ -91,6 +91,11 @@ namespace ECommerceWebsite.MvcWebUI.Controllers
                     var authProperties = new AuthenticationProperties();
                     authProperties.IsPersistent = model.RememberMe;
                     authManager.SignIn(authProperties, identityclaims);
+
+                    if (String.IsNullOrEmpty(ReturnUrl))
+                    {
+                       return Redirect(ReturnUrl);
+                    }
 
                     return RedirectToAction("Index", "Home");
                 }
