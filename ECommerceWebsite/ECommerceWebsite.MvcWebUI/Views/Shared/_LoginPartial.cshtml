@@ -1,11 +1,32 @@
-﻿<ul class="navbar-nav my-2 my-lg-0">
-    <li class="nav-item active">
-        <a class="nav-link" href="/">Anasayfa <span class="sr-only">(current)</span></a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" href="/Home/List">Ürünler</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" href="#">Hakkımızda</a>
-    </li>
+﻿
+
+
+<ul class="navbar-nav my-2 my-lg-0">
+
+    @if (Request.IsAuthenticated)
+    {
+        //kullanıcı adı ve login linkleri
+        <li class="nav-item active">
+            <a class="nav-link" href="/">@User.Identity.Name</a>
+        </li>
+        <li class="nav-item active">
+            <a class="nav-link" href="/Account/Logout">Çıkış Yap</a>
+        </li>
+    }
+    else
+    {
+        //login ve register linkleri
+        <li class="nav-item active">
+            <a class="nav-link" href="/Account/Login">Login</a>
+        </li>
+        <li class="nav-item active">
+            <a class="nav-link" href="/Account/Register">Register</a>
+        </li>
+    }
+
+
+
+
+
+
 </ul>
