@@ -33,6 +33,16 @@ namespace ECommerceWebsite.MvcWebUI.Models
         {
             _cartLines.RemoveAll(i => i.Product.Id == product.Id);
         }
+
+        public double Total()
+        {
+            return _cartLines.Sum(i => i.Product.ProductPrice * i.Quantity);
+        }
+
+        public void Clear()
+        {
+            _cartLines.Clear();
+        }
     }
 
 
