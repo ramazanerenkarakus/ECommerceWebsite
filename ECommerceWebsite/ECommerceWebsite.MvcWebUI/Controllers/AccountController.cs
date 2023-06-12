@@ -49,9 +49,9 @@ namespace ECommerceWebsite.MvcWebUI.Controllers
                 if (result.Succeeded)
                 {
                     //kullanıcı oluşturuldu, role atanmaya hazır.
-                    if (RoleManager.RoleExists("User"))
+                    if (RoleManager.RoleExists("user"))
                     {
-                        UserManager.AddToRole(user.Id, "User");
+                        UserManager.AddToRole(user.Id, "user");
                     }
                     return RedirectToAction("Login", "Account");
                 }
