@@ -15,7 +15,7 @@ namespace ECommerceWebsite.MvcWebUI.Controllers
         // GET: Cart
         public ActionResult Index()
         {
-            return View();
+            return View(GetCart());
         }
 
         public ActionResult AddToCart(int Id)

@@ -1,0 +1,58 @@
+﻿@model ECommerceWebsite.MvcWebUI.Models.Cart
+@{
+    ViewBag.Title = "Index";
+}
+<div class="container pb-5">
+    <div class="row">
+        <div class="col-md-12">
+            <h2>Alışveriş Sepeti</h2>
+            <hr />
+
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Adet</th>
+                        <th>Ürün İsmi</th>
+                        <th>Fiyat</th>
+                        <th>Toplam</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.CartLines)
+                    {
+                    <tr>
+                        <td>
+                           <img src="~/Theme/img/@item.Product.Image" width="50"/> 
+                        </td>
+                        <td>
+                            @item.Quantity
+                        </td>
+                        <td>
+                            @item.Product.ProductName
+                        </td>
+                        <td>
+                            @(item.Product.ProductPrice.ToString("c"))
+                        </td>
+                        <td>
+                            @((item.Product.ProductPrice*item.Quantity).ToString("c"))
+                        </td>
+                    </tr>
+                    }
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="4"></td>
+                        <td>
+                            @(Model.Total().ToString("c") + " " + "TL")
+                        </td>
+                    </tr>
+                </tfoot>
+
+            </table>
+
+
+
+        </div>
+    </div>
+</div>
