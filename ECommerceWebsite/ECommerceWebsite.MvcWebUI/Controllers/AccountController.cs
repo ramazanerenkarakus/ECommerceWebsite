@@ -101,5 +101,14 @@ namespace ECommerceWebsite.MvcWebUI.Controllers
             }
             return View(model);
         }
+
+
+        public ActionResult Logout()
+        {
+            var authManager = HttpContext.GetOwinContext().Authentication;
+            authManager.SignOut();
+
+            return RedirectToAction("Index","Home");
+        }
     }
 }
