@@ -94,10 +94,11 @@ namespace ECommerceWebsite.MvcWebUI.Controllers
 
                     return RedirectToAction("Index", "Home");
                 }
-
-
+                else
+                {
+                    ModelState.AddModelError("LoginUserError", "Kullanıcı bulunamadı. Bilgilerinizi kontrol edin.");
+                }
             }
-
             return View(model);
         }
     }
