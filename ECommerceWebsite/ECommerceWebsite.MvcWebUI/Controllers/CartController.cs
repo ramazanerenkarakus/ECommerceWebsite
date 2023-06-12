@@ -1,4 +1,5 @@
-﻿using ECommerceWebsite.MvcWebUI.Models;
+﻿using ECommerceWebsite.MvcWebUI.Entity;
+using ECommerceWebsite.MvcWebUI.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,8 @@ namespace ECommerceWebsite.MvcWebUI.Controllers
 {
     public class CartController : Controller
     {
+        private Context db = new Context();
+
         // GET: Cart
         public ActionResult Index()
         {
@@ -17,13 +20,15 @@ namespace ECommerceWebsite.MvcWebUI.Controllers
 
         public ActionResult AddToCart(int Id)
         {
+            var product = db.Products.FirstOrDefault(x => x.Id == Id);
+
+
             return View();
         }
 
         public Cart GetCart()
         {
-            Cart cart = (Cart)Session["Cart"];
-
+            var cart = (Cart)Session["Cart"];
             if (cart == null)
             {
                 cart = new Cart();
