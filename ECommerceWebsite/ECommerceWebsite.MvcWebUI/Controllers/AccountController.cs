@@ -2,6 +2,7 @@
 using ECommerceWebsite.MvcWebUI.Models;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
+using Microsoft.Owin.Security;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,6 +25,7 @@ namespace ECommerceWebsite.MvcWebUI.Controllers
             RoleManager = new RoleManager<ApplicationRole>(roleStore);
         }
 
+        // GET: Account
         public ActionResult Register()
         {
             return View();
@@ -57,6 +59,42 @@ namespace ECommerceWebsite.MvcWebUI.Controllers
                 {
                     ModelState.AddModelError("RegisterUserError", "Kullanıcı oluşturulamadı.");
                 }
+
+            }
+
+            return View(model);
+        }
+
+
+
+        // GET: Account
+        public ActionResult Login()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Login(Login model)
+        {
+            if (ModelState.IsValid)
+            {
+                //Login işlemleri
+
+                var user = UserManager.Find(model.UserName, model.Password);
+
+                if (user != null)
+                {
+                    //Kullanıcı var, sisteme dahil et.
+                    var authManager = HttpContext.GetOwinContext().Authentication;
+                    var identityclaims = UserManager.CreateIdentity(user, "ApplicationCookie");
+                    var authProperties = new AuthenticationProperties();
+                    authProperties.IsPersistent = model.RememberMe;
+                    authManager.SignIn(authProperties, identityclaims);
+
+                    return RedirectToAction("Index", "Home");
+                }
+
 
             }
 
