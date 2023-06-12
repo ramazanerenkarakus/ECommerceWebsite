@@ -94,7 +94,7 @@ namespace ECommerceWebsite.MvcWebUI.Controllers
 
                     if (String.IsNullOrEmpty(ReturnUrl))
                     {
-                       return RedirectToAction("Index","Home");
+                       return RedirectToAction("Index","Home"); //ReturnUrl geldiğinde 2 ihtimal olacak kontrol sağlamalı.
                     }
 
                     return RedirectToAction("Index", "Home");

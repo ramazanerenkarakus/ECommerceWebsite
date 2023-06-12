@@ -22,8 +22,24 @@ namespace ECommerceWebsite.MvcWebUI.Controllers
         {
             var product = db.Products.FirstOrDefault(x => x.Id == Id);
 
+            if (product!=null)
+            {
+                GetCart().AddProduct(product,1);
+            }
 
-            return View();
+            return RedirectToAction("Index");
+        }
+
+        public ActionResult RemoveFromCart(int Id)
+        {
+            var product = db.Products.FirstOrDefault(x => x.Id == Id);
+
+            if (product != null)
+            {
+                GetCart().DeleteProduct(product);
+            }
+
+            return RedirectToAction("Index");
         }
 
         public Cart GetCart()
