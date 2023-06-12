@@ -14,7 +14,27 @@ namespace ECommerceWebsite.MvcWebUI.Models
         {
             get { return _cartLines; }
 
+        }
+
+        public void AddProduct(Product product, int quantity)
+        {
+            var line = _cartLines.FirstOrDefault(i => i.Product.Id == product.Id);
+            if (line == null)
+            {
+                _cartLines.Add(new CartLine() { Product = product, Quantity = quantity });
+            }
+            else
+            {
+                line.Quantity += quantity;
+            }
+        }
+
+        public void DeleteProduct(Product product) 
+        {
+            _cartLines.RemoveAll(i => i.Product.Id == product.Id);
+        }
     }
+
 
     public class CartLine
     {
