@@ -7,50 +7,82 @@
         <div class="col-md-12">
             <h2>Alışveriş Sepeti</h2>
             <hr />
+            <br />
 
-            <table class="table table-bordered">
-                <thead>
-                    <tr>
-                        <th></th>
-                        <th>Adet</th>
-                        <th>Ürün İsmi</th>
-                        <th>Fiyat</th>
-                        <th>Toplam</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach (var item in Model.CartLines)
-                    {
-                    <tr>
-                        <td>
-                           <img src="~/Theme/img/@item.Product.Image" width="50"/> 
-                        </td>
-                        <td>
-                            @item.Quantity
-                        </td>
-                        <td>
-                            @item.Product.ProductName
-                        </td>
-                        <td>
-                            @(item.Product.ProductPrice.ToString("c"))
-                        </td>
-                        <td>
-                            @((item.Product.ProductPrice*item.Quantity).ToString("c"))
-                        </td>
-                    </tr>
-                    }
-                </tbody>
-                <tfoot>
-                    <tr>
-                        <td colspan="4"></td>
-                        <td>
-                            @(Model.Total().ToString("c") + " " + "TL")
-                        </td>
-                    </tr>
-                </tfoot>
+            @if (Model.CartLines.Count > 0)
+            {
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Adet</th>
+                            <th>Ürün İsmi</th>
+                            <th>Fiyat</th>
+                            <th>Toplam</th>
+                            <td></td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model.CartLines)
+                        {
+                            <tr>
+                                <td>
+                                    <img src="~/Theme/img/@item.Product.Image" width="50" />
+                                </td>
+                                <td>
+                                    @item.Quantity
+                                </td>
+                                <td>
+                                    @item.Product.ProductName
+                                </td>
+                                <td>
+                                    @(item.Product.ProductPrice.ToString("c"))
+                                </td>
+                                <td>
+                                    @((item.Product.ProductPrice*item.Quantity).ToString("c"))
+                                </td>
+                                <td>
+                                    @using (Html.BeginForm("RemoveFromCart", "Cart"))
+                                    {
+                                        @Html.Hidden("Id", item.Product.Id)
+                                        <button type="submit" class="btn btn-outline-danger">
+                                            <i class="fa-solid fa-trash"></i>
+                                            Sepetten Çıkart
+                                        </button>
+                                    }
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="5"></td>
+                            <td>
+                                @(Model.Total().ToString("c") + " " + "TL")
+                            </td>
+                        </tr>
+                    </tfoot>
+                </table>
+                <br />
+                <br />
+                <a class="btn btn-success btn-lg" href="/Home/List" role="button">
+                    <i class="fa-solid fa-handshake-simple fa-beat"></i>
+                    Alışverişe Devam Et
+                </a>
 
-            </table>
-
+            }
+            else
+            {
+                <div class="alert alert-warning" role="alert">
+                    <i class="fa-solid fa-face-frown"></i>
+                    Alışveriş Sepetinizde Ürün Bulunmamaktadır.
+                </div>
+                <br />
+                <a class="btn btn-success btn-lg" href="/Home/List" role="button">
+                    <i class="fa-solid fa-plane"></i>
+                    Ürün Listesine Geri Dön
+                </a>
+            }
 
 
         </div>

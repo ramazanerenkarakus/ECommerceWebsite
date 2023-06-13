@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Faİcon için gerekli olan link -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
     <script src="https://kit.fontawesome.com/1f10dafed5.js" crossorigin="anonymous"></script>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -13,7 +14,12 @@
 <body>
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="/Home">ErKa</a>
+        <a class="navbar-brand" href="/Home">
+            <i class="fa-solid fa-e fa-beat-fade"></i>
+            <i class="fa-solid fa-r fa-beat-fade"></i>
+            <i class="fa-solid fa-k fa-beat-fade"></i>
+            <i class="fa-solid fa-a fa-beat-fade"></i>
+        </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -21,10 +27,16 @@
         <div class="collapse navbar-collapse" id="navbarColor01">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="/">Anasayfa</a>
+                    <a class="nav-link" href="/">
+                        Anasayfa
+                        <i class="fa-solid fa-house"></i>
+                    </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/Home/List">Ürünler</a>
+                    <a class="nav-link" href="/Home/List">
+                        Ürünler
+                        <i class="fa-solid fa-list"></i>
+                    </a>
                 </li>  
             </ul>
             @Html.Partial("_LoginPartial")

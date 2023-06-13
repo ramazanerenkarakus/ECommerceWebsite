@@ -7,23 +7,39 @@
     {
         //kullanıcı adı ve login linkleri
         <li class="nav-item active">
-            <a class="nav-link" href="/">@User.Identity.Name</a>
+
+            <a class="nav-link" href="/">
+                <i class="fa-solid fa-user"></i>
+                @User.Identity.Name
+            </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="/Account/Logout">Çıkış Yap</a>
+            <a class="nav-link" href="/Account/Logout">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                Çıkış Yap
+            </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="/Product">Admin Paneli</a>
+            <a class="nav-link" href="/Product">
+                <i class="fa-solid fa-sun"></i>
+                Admin Paneli
+            </a>
         </li>
     }
     else
     {
         //login ve register linkleri
         <li class="nav-item active">
-            <a class="nav-link" href="/Account/Login">Giriş Yap</a>
+            <a class="nav-link" href="/Account/Login">
+                <i class="fa-solid fa-key"></i>
+                Giriş Yap
+            </a>
         </li>
         <li class="nav-item active">
-            <a class="nav-link" href="/Account/Register">Kayıt Ol</a>
+            <a class="nav-link" href="/Account/Register">
+                <i class="fa-solid fa-user-plus"></i>
+                Kayıt Ol
+            </a>
         </li>
     }
 
