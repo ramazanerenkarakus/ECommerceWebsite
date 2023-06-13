@@ -1,0 +1,23 @@
+﻿@model ECommerceWebsite.MvcWebUI.Models.Cart
+
+<style>
+
+    #cart{
+        color:white;
+    }
+
+    #basket{
+        color:white;
+    }
+</style>
+
+<ul class="navbar-nav my-2 my-lg-0">
+
+        <li id="cart" class="nav-item active">
+            <a id="basket" href="/Cart">Sepete Git</a>
+            <i class="fa-solid fa-cart-plus" aria-hidden="true"></i>
+            (@Model.CartLines.Count)
+        </li>
+        
+
+</ul>
